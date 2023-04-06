@@ -36,10 +36,10 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonHome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1HA-f2-1eT"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homero-beso" translatesAutoresizingMaskIntoConstraints="NO" id="yRU-OX-beE">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
-                            </imageView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbE-Lo-EHN">
                                 <rect key="frame" x="74" y="388" width="266" height="0.0"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
@@ -68,6 +68,9 @@
                                     <action selector="createAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dWw-W3-F0C"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="homero-beso" translatesAutoresizingMaskIntoConstraints="NO" id="yRU-OX-beE">
+                                <rect key="frame" x="16" y="-159" width="414" height="350"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -102,6 +105,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FXV-sp-jG2"/>
+                    <connections>
+                        <outlet property="userLogin" destination="HxB-bp-Nld" id="wKj-yF-K2p"/>
+                        <outlet property="userPassword" destination="DqC-PN-6Q4" id="61E-8C-WCV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,16 +211,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HomeroApp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcY-3B-Xi7">
-                                <rect key="frame" x="109" y="97" width="197" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HomeroApp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcY-3B-Xi7">
+                                <rect key="frame" x="109" y="97" width="197" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xhX-O3-jjh">
-                                <rect key="frame" x="16" y="203" width="382" height="101.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xhX-O3-jjh">
+                                <rect key="frame" x="16" y="144.5" width="382" height="101.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xap-jy-pcI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xap-jy-pcI">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="28.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -233,6 +240,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Cerrar sesion">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="closeSessionbutton:" destination="GrP-nF-rzQ" eventType="touchUpInside" id="lqE-c9-FoL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -240,8 +250,11 @@
                         <viewLayoutGuide key="safeArea" id="P2O-yB-KxS"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="P2O-yB-KxS" firstAttribute="trailing" secondItem="jcY-3B-Xi7" secondAttribute="trailing" constant="108" id="27s-89-w11"/>
+                            <constraint firstItem="jcY-3B-Xi7" firstAttribute="top" secondItem="P2O-yB-KxS" secondAttribute="top" constant="49" id="8B9-Bh-yTH"/>
                             <constraint firstItem="xhX-O3-jjh" firstAttribute="top" secondItem="jcY-3B-Xi7" secondAttribute="bottom" constant="16" id="Ta8-TI-soP"/>
                             <constraint firstItem="P2O-yB-KxS" firstAttribute="trailing" secondItem="xhX-O3-jjh" secondAttribute="trailing" constant="16" id="jt0-EU-GJj"/>
+                            <constraint firstItem="jcY-3B-Xi7" firstAttribute="leading" secondItem="P2O-yB-KxS" secondAttribute="leading" constant="109" id="oqR-b5-RmR"/>
                             <constraint firstItem="xhX-O3-jjh" firstAttribute="leading" secondItem="P2O-yB-KxS" secondAttribute="leading" constant="16" id="qyK-cg-9EZ"/>
                         </constraints>
                     </view>
