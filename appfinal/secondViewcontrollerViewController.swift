@@ -6,67 +6,48 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class secondViewcontrollerViewController: UIViewController {
     
-    @IBOutlet weak var cantidadTextField: UITextField!
     
+    @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    }
+    func backToHome(){
+        let home = self.storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
+        self.navigationController?.pushViewController(home, animated: true)
     }
     
+    @IBAction func backHome(_ sender: Any) {
+        backToHome()
+    }
     
-    @IBAction func calcularTotalButton(_ sender: Any) {
+    @IBAction func registerActionButton(_ sender: Any) {
         
-        let cantidad = Int(cantidadTextField.text!) ?? 0
-        
-        
-        if cantidadTextField.text == "" {
-            let mensajeAlert = UIAlertController(title: "Sin Informacion", message: "Campos Vacios", preferredStyle: .alert )
-            mensajeAlert.addAction(UIAlertAction(title: "Atras", style: .destructive, handler: nil))
-            
-            self.present(mensajeAlert,animated: true,completion: nil)
-            
-        }
-        if cantidad >= 1 {
-            let valorCasa = 129990
-            
-            let cantidadExtra = cantidad
-            let cantidadExtraString = String(cantidadExtra)
-            
-            let totalCompra = valorCasa * cantidad
-            let totalCompraString = String(totalCompra)
-            
-            let vista3 = storyboard?.instantiateViewController(identifier: "capa3") as? ViewController3
-            vista3?.final = totalCompraString
-            vista3?.cantidadFinal = cantidadExtraString
-            
-            self.navigationController?.pushViewController(vista3!, animated: true)
-            
+        if let email = emailTextField.text , let password = passwordTextField.text {
+            Auth.auth().createUser(withEmail: email, password: password) {
+                (result, error) in
+                if let result = result , error == nil {
+                    let alertController = UIAlertController(title: "Usuario creado", message:
+                    "Tus datos han sido guardados exitosamente", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { action in self.backToHome()}))
+                    self.present(alertController, animated: true, completion: nil)
+                } else {
+                    let alertController = UIAlertController(title: "Error", message:
+                    "Se ha producido un error con el registo",
+                                                            preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
-        
-            else  {
-                let mensajeAlert = UIAlertController(title: "Datos Incorrectos", message: "Ingrese un Numero Valido", preferredStyle: .alert )
-                mensajeAlert.addAction(UIAlertAction(title: "Atras", style: .destructive, handler: nil))
-
-                self.present(mensajeAlert,animated: true,completion: nil)
         }
+    }
+}
         
-        }
-        }
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
-    
