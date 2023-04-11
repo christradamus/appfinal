@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     private var failedAttempts = 0
     private var showTitle: String = ""
     private var showWelcome: String = ""
+    let ERROR_USER_DISABLED_MESSAGE = "Su cuenta está bloqueada, contacte a un administrador"
+    let ERROR_WRONG_PASSWORD_MESSAGE = "Usuario y/o Clave No válidos"
+    let ERROR_TOO_MANY_REQUESTS_MESSAGE = "Su cuenta está bloqueada, contacte a un administrador"
+    let ERROR_INVALID_EMAIL_MESSAGE = "Usuario y/o Clave No válidos"
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var userLogin: UITextField!
@@ -38,42 +42,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonHome(_ sender: Any) {
-        Auth.auth().signIn(withEmail: userLogin.text!, password: userPassword.text!) { authResult, error in
-            if error != nil {
-                if let error = error as NSError?, let userInfo = error.userInfo as NSDictionary?,
-                   let errorName = userInfo[AuthErrorUserInfoNameKey] as? String, errorName == "ERROR_USER_DISABLED" {
-                    let alertController = UIAlertController(title: "Cuenta Bloqueada", message:
-                                                                "Su cuenta está bloqueada, contacte a un administrador",
-                                                            preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Volver", style: .default))
-                    self.present(alertController, animated: true, completion: nil)
+        Auth.auth().signIn(withEmail: userLogin.text!, password: userPassword.text!) { [self] authResult, error in
+            if let error = error as NSError?, let userInfo = error.userInfo as NSDictionary?, let errorName = userInfo[AuthErrorUserInfoNameKey] as? String {
+                var errorMessage: String
+                switch errorName {
+                case "ERROR_USER_DISABLED":
+                    errorMessage = self.ERROR_USER_DISABLED_MESSAGE
+                case "ERROR_WRONG_PASSWORD", "ERROR_INVALID_EMAIL":
+                    errorMessage = self.ERROR_WRONG_PASSWORD_MESSAGE
+                case "ERROR_TOO_MANY_REQUESTS":
+                    errorMessage = self.ERROR_TOO_MANY_REQUESTS_MESSAGE
+                case "ERROR_USER_NOT_FOUND":
+                    errorMessage = self.ERROR_INVALID_EMAIL_MESSAGE
+                default:
+                    return
                 }
-                if let error = error as NSError?, let userInfo = error.userInfo as NSDictionary?,
-                   let errorName = userInfo[AuthErrorUserInfoNameKey] as? String, errorName == "ERROR_WRONG_PASSWORD" {
-                    let alertController = UIAlertController(title: "Error", message:
-                                                                "Usuario y/o Clave No válidos",
-                                                            preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Volver", style: .default))
-                    self.present(alertController, animated: true, completion: nil)
-                }
-                if let error = error as NSError?, let userInfo = error.userInfo as NSDictionary?,
-                   let errorName = userInfo[AuthErrorUserInfoNameKey] as? String, errorName == "ERROR_TOO_MANY_REQUESTS" {
-                    let alertController = UIAlertController(title: "Cuenta Bloqueada", message:
-                                                                "Su cuenta está bloqueada, contacte a un administrador",
-                                                            preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Volver", style: .default))
-                    self.present(alertController, animated: true, completion: nil)
-                }
-                if let error = error as NSError?, let userInfo = error.userInfo as NSDictionary?,
-                   let errorName = userInfo[AuthErrorUserInfoNameKey] as? String, errorName == "ERROR_INVALID_EMAIL" {
-                    let alertController = UIAlertController(title: "Error", message:
-                                                                "Usuario y/o Clave No válidos",
-                                                            preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Volver", style: .default))
-                    self.present(alertController, animated: true, completion: nil)
-                } else {
-                    self.goToTheMainHome()
-                }
+                let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Volver", style: .default))
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                self.goToTheMainHome()
             }
         }
     }
