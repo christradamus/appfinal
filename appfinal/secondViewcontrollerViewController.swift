@@ -20,6 +20,7 @@ class secondViewcontrollerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     func backToHome(){
         let home = self.storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
         self.navigationController?.pushViewController(home, animated: true)
@@ -44,7 +45,7 @@ class secondViewcontrollerViewController: UIViewController {
                     let alertController = UIAlertController(title: "Error", message:
                                                                 "Se ha producido un error con el registo",
                                                             preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
+                    alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                     self.present(alertController, animated: true, completion: nil)
                 }
             }

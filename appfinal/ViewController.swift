@@ -10,8 +10,27 @@ import FirebaseAuth
 
 class ViewController: UIViewController {
     
+    let auth = FirebaseAuth.Auth.auth()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBOutlet weak var userLogin: UITextField!
+    @IBOutlet weak var userPassword: UITextField!
+        
+    @IBAction func buttonHome(_ sender: Any) {
+        Auth.auth().signIn(withEmail: userLogin.text!, password: userPassword.text!) { authResult, error in
+            if let error = error {
+                let alertController = UIAlertController(title: "Error", message:
+                                                            "Correo inválido o Cuenta no creada",
+                                                        preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Volver", style: .default))
+                self.present(alertController, animated: true, completion: nil)
+            } else {
+                self.goVCtest()
+            }
+        }
     }
     
     @IBAction func createAccount(_ sender: Any) {
@@ -21,24 +40,8 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(homeVc, animated: true)
     }
     
-    @IBOutlet weak var userLogin: UITextField!
-    
-    @IBOutlet weak var userPassword: UITextField!
-    
     func goVCtest(){
         let home = self.storyboard?.instantiateViewController(withIdentifier: "capa3") as! ViewController3
         self.navigationController?.pushViewController(home, animated: true)
-    }
-    
-    @IBAction func buttonHome(_ sender: Any) {
-        Auth.auth().signIn(withEmail: userLogin.text!, password: userPassword.text!) { (user, error) in
-            self.goVCtest()
-            
-            /* if let email = userLogin.text , let password = userPassword.text {
-             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-             guard let strongSelf = self else { return }
-             }
-             }*/
-        }
     }
 }
