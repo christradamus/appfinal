@@ -10,11 +10,8 @@ import FirebaseAuth
 
 class secondViewcontrollerViewController: UIViewController {
     
-    
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
-    
     @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {

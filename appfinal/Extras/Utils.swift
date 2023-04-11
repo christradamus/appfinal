@@ -12,4 +12,5 @@ class Global {
     
     var user: String = ""
     var userPassword: String = ""
+    var name: String = ""
 }
