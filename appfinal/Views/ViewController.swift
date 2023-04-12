@@ -43,6 +43,8 @@ class ViewController: UIViewController {
     
     @IBAction func buttonHome(_ sender: Any) {
         Auth.auth().signIn(withEmail: userLogin.text!, password: userPassword.text!) { [self] authResult, error in
+            Global.sharedInstance.user = userLogin.text!
+            Global.sharedInstance.userPassword = userPassword.text!
             if let error = error as NSError?, let userInfo = error.userInfo as NSDictionary?, let errorName = userInfo[AuthErrorUserInfoNameKey] as? String {
                 var errorMessage: String
                 switch errorName {

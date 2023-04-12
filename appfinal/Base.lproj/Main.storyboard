@@ -272,6 +272,10 @@
                                     <action selector="closeSessionbutton:" destination="GrP-nF-rzQ" eventType="touchUpInside" id="lqE-c9-FoL"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-nh-Ief">
+                                <rect key="frame" x="153" y="201" width="227" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P2O-yB-KxS"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -283,6 +287,7 @@
                     </view>
                     <connections>
                         <outlet property="hiLabel" destination="edd-NO-CfT" id="3nc-TL-dLN"/>
+                        <outlet property="imageData" destination="jjZ-nh-Ief" id="vFK-Or-btD"/>
                         <outlet property="titleUser" destination="jcY-3B-Xi7" id="7oj-hc-BPo"/>
                     </connections>
                 </viewController>
@@ -335,7 +340,7 @@
                                 <color key="textColor" systemColor="systemGray6Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recupera tu clave" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60e-6D-s9y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recuperar clave" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60e-6D-s9y">
                                 <rect key="frame" x="20" y="90" width="378" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

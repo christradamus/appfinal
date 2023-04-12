@@ -14,9 +14,13 @@ class ViewController3: UIViewController {
     @IBOutlet weak var titleUser: UILabel!
     private var showTitleUser: String = ""
     private var showWelcomeUser: String = ""
+    @IBOutlet weak var imageData: UIImageView!
+    let smu = UIImage(named: "logo-smu-5e55381e3427f")
+    let bancoChile = UIImage(named: "descarga")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sendImageview()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 60
         let remoteConfig = RemoteConfig.remoteConfig()
@@ -28,6 +32,15 @@ class ViewController3: UIViewController {
                 self.hiLabel.text = showWelcomeUser
                 self.titleUser.text = showTitleUser
             }
+        }
+    }
+    
+    func sendImageview(){
+        if Global.sharedInstance.user.contains ("smu") {
+            imageData.image = smu
+        }
+        if Global.sharedInstance.user.contains ("banco") {
+            imageData.image = bancoChile
         }
     }
     
