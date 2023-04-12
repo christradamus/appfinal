@@ -77,4 +77,9 @@ class ViewController: UIViewController {
         let home = self.storyboard?.instantiateViewController(withIdentifier: "capa3") as! ViewController3
         self.navigationController?.pushViewController(home, animated: true)
     }
+    
+    @IBAction func goToPasswordVC(_ sender: Any) {
+        let home = self.storyboard?.instantiateViewController(withIdentifier: "password") as! PasswordViewController
+        self.navigationController?.pushViewController(home, animated: true)
+    }
 }
