@@ -13,6 +13,7 @@ import FirebaseFirestore
 class ViewController: UIViewController {
     
     private let auth = FirebaseAuth.Auth.auth()
+    let db = Firestore.firestore()
     private var failedAttempts = 0
     private var showTitle: String = ""
     private var showWelcome: String = ""
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonHome(_ sender: Any) {
         Auth.auth().signIn(withEmail: userLogin.text!, password: userPassword.text!) { [self] authResult, error in
+            let databaseInformation = db.collection("users").document(self.userLogin.text!)
             Global.sharedInstance.user = userLogin.text!
             Global.sharedInstance.userPassword = userPassword.text!
             if let error = error as NSError?, let userInfo = error.userInfo as NSDictionary?, let errorName = userInfo[AuthErrorUserInfoNameKey] as? String {
@@ -53,6 +55,12 @@ class ViewController: UIViewController {
                     errorMessage = self.ERROR_USER_DISABLED_MESSAGE
                 case "ERROR_WRONG_PASSWORD", "ERROR_INVALID_EMAIL":
                     errorMessage = self.ERROR_WRONG_PASSWORD_MESSAGE
+                    failedAttempts += 1
+                    if failedAttempts > 3 {
+                        errorMessage = self.ERROR_USER_DISABLED_MESSAGE
+                        databaseInformation.updateData(["isActive": false
+                        ])
+                    }
                 case "ERROR_TOO_MANY_REQUESTS":
                     errorMessage = self.ERROR_TOO_MANY_REQUESTS_MESSAGE
                 case "ERROR_USER_NOT_FOUND":

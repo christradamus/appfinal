@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
-import CryptoKit
 
 class secondViewcontrollerViewController: UIViewController {
     
@@ -31,37 +30,21 @@ class secondViewcontrollerViewController: UIViewController {
     }
     
     func transformPassword(_ password: String) -> String {
-        let characterMap: [Character: Character] = [
-            "a": "1", "b": "2", "c": "3", "d": "4", "e": "5", "f": "6", "g": "7", "h": "8", "i": "9", "j": "0",
-            "k": "!", "l": "@", "m": "#", "n": "$", "o": "%", "p": "^", "q": "&", "r": "*", "s": "(", "t": ")",
-            "u": "-", "v": "+", "w": "=", "x": "{", "y": "}", "z": "[", "A": "]", "B": ":", "C": ";", "D": "<",
-            "E": ">", "F": "?", "G": "/", "H": "|", "I": "\\", "J": "\"", "K": ".", "L": ",", "M": "`", "N": "~",
-            "O": "a", "P": "b", "Q": "c", "R": "d", "S": "e", "T": "f", "U": "g", "V": "h", "W": "i", "X": "j",
-            "Y": "k", "Z": "l", "0": "m", "1": "n", "2": "o", "3": "p", "4": "q", "5": "r", "6": "s", "7": "t",
-            "8": "u", "9": "v", "@": "w", "#": "x", "$": "y", "%": "z", "^": "A", "&": "B", "*": "C", "(": "D",
-            ")": "E", "-": "F", "+": "G", "=": "H", "{": "I", "}": "J", "[": "K", "]": "L", ":": "M", ";": "N",
-            "<": "O", ">": "P", "?": "Q", "/": "R", "|": "S", "\\": "T", "\"": "U", ".": "V", ",": "W", "`": "X",
-            "~": "Y", " ": "Z"
-        ]
-        let transformedPassword = String(password.map { characterMap[$0] ?? $0 })
-        return transformedPassword
-    }
-    
-    /*func transformPassword(_ password: String) -> String {
         let charactersToReplace = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let replacementCharacters = "1234567890!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~"
+        let replacementCharacters = "1234567890!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?`~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         var transformedPassword = password
         
         for i in 0..<charactersToReplace.count {
             let index = charactersToReplace.index(charactersToReplace.startIndex, offsetBy: i)
             let character = charactersToReplace[index]
-            let replacementIndex = replacementCharacters.index(replacementCharacters.startIndex, offsetBy: i)
+            let randomIndex = Int.random(in: 0..<replacementCharacters.count)
+            let replacementIndex = replacementCharacters.index(replacementCharacters.startIndex, offsetBy: randomIndex)
             let replacementCharacter = replacementCharacters[replacementIndex]
             
             transformedPassword = transformedPassword.replacingOccurrences(of: String(character), with: String(replacementCharacter))
         }
         return transformedPassword
-    }*/
+    }
     
     @IBAction func registerActionButton(_ sender: Any) {
         if let email = emailTextField.text , let password = passwordTextField.text {
