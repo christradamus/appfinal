@@ -100,7 +100,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "117B1693-C2EC-4A79-B254-ED17094FFF46 - 1896b3b40f7d00f0"
+                  uuid = "117B1693-C2EC-4A79-B254-ED17094FFF46 - 1896b3b40f7d00d1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -110,12 +110,12 @@
                   urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
                   offsetFromSymbolStart = "96">
                </Location>
                <Location
-                  uuid = "117B1693-C2EC-4A79-B254-ED17094FFF46 - 1896b3b40f7d00f0"
+                  uuid = "117B1693-C2EC-4A79-B254-ED17094FFF46 - 1896b3b40f7d00d1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -125,12 +125,12 @@
                   urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
                   offsetFromSymbolStart = "1032">
                </Location>
                <Location
-                  uuid = "117B1693-C2EC-4A79-B254-ED17094FFF46 - 683f83b8c3abdf4d"
+                  uuid = "117B1693-C2EC-4A79-B254-ED17094FFF46 - 683f83b8c3abdf32"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -140,9 +140,9 @@
                   urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "156">
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "188">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -157,72 +157,10 @@
             filePath = "appfinal/Views/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "buttonHome(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "17C59B50-B64A-4493-B7E6-E55FF798FD2F - 683f83b8c3abdf13"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.ViewController.buttonHome(Any) -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "1120">
-               </Location>
-               <Location
-                  uuid = "17C59B50-B64A-4493-B7E6-E55FF798FD2F - 683f83b8c3abdf13"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.ViewController.buttonHome(Any) -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "1228">
-               </Location>
-               <Location
-                  uuid = "17C59B50-B64A-4493-B7E6-E55FF798FD2F - 683f83b8c3abdf13"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.ViewController.buttonHome(Any) -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "1292">
-               </Location>
-               <Location
-                  uuid = "17C59B50-B64A-4493-B7E6-E55FF798FD2F - 683f83b8c3abdf13"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.ViewController.buttonHome(Any) -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "1888">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -299,8 +237,8 @@
             filePath = "appfinal/Views/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "createAccount(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -315,8 +253,8 @@
             filePath = "appfinal/Views/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "createAccount(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -331,8 +269,8 @@
             filePath = "appfinal/Views/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97">
+            startingLineNumber = "103"
+            endingLineNumber = "103">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -345,10 +283,10 @@
             filePath = "appfinal/Views/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "goToTheMainHome()"
-            landmarkType = "7">
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -361,8 +299,8 @@
             filePath = "appfinal/Views/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "goToTheMainHome()"
             landmarkType = "7">
          </BreakpointContent>
@@ -425,8 +363,8 @@
             filePath = "appfinal/Views/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "buttonHome(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -447,7 +385,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8A4E0903-5AF2-4EE4-8167-B14346F85057 - 180c8f6ea5ca7df3"
+                  uuid = "8A4E0903-5AF2-4EE4-8167-B14346F85057 - 180c8f6ea5ca7f02"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -457,12 +395,12 @@
                   urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/secondViewcontrollerViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
                   offsetFromSymbolStart = "348">
                </Location>
                <Location
-                  uuid = "8A4E0903-5AF2-4EE4-8167-B14346F85057 - 180c8f6ea5ca7df3"
+                  uuid = "8A4E0903-5AF2-4EE4-8167-B14346F85057 - 180c8f6ea5ca7f02"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -472,8 +410,8 @@
                   urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/secondViewcontrollerViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
                   offsetFromSymbolStart = "544">
                </Location>
             </Locations>
@@ -495,7 +433,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "36F8181D-0B34-49A6-959A-7FFEC64285FE - 180c8f6ea5ca7dd0"
+                  uuid = "36F8181D-0B34-49A6-959A-7FFEC64285FE - 180c8f6ea5ca7fe3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -505,12 +443,12 @@
                   urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/secondViewcontrollerViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
                   offsetFromSymbolStart = "840">
                </Location>
                <Location
-                  uuid = "36F8181D-0B34-49A6-959A-7FFEC64285FE - 180c8f6ea5ca7dd0"
+                  uuid = "36F8181D-0B34-49A6-959A-7FFEC64285FE - 180c8f6ea5ca7fe3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -520,11 +458,27 @@
                   urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/secondViewcontrollerViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
                   offsetFromSymbolStart = "1736">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "383732FD-A6F2-4C8D-8B5B-2D16368385CC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appfinal/Views/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "buttonHome(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
