@@ -56,7 +56,7 @@ class ViewController: UIViewController {
                 case "ERROR_WRONG_PASSWORD", "ERROR_INVALID_EMAIL":
                     errorMessage = self.ERROR_WRONG_PASSWORD_MESSAGE
                     failedAttempts += 1
-                    if failedAttempts > 3 {
+                    if failedAttempts >= 3 {
                         errorMessage = self.ERROR_USER_DISABLED_MESSAGE
                         databaseInformation.updateData(["isActive": false
                         ])
