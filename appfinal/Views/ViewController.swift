@@ -45,6 +45,12 @@ class ViewController: UIViewController {
     
     @IBAction func buttonHome(_ sender: Any) {
         Auth.auth().signIn(withEmail: userLogin.text!, password: userPassword.text!) { [self] authResult, error in
+            if userLogin.text! == "" || userPassword.text! == "" {
+                let alertController = UIAlertController(title: "Error", message: "Favor ingresar email y clave", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Volver", style: .default))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
             let databaseInformation = db.collection("users").document(self.userLogin.text!)
             Global.sharedInstance.user = userLogin.text!
             Global.sharedInstance.userPassword = userPassword.text!
