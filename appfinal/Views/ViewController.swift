@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseRemoteConfig
+import FirebaseFirestore
 
 class ViewController: UIViewController {
     
