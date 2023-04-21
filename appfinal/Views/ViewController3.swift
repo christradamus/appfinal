@@ -10,7 +10,13 @@ import FirebaseRemoteConfig
 import FirebaseFirestore
 
 class ViewController3: UIViewController {
-
+    
+    @IBOutlet weak var option1: UIButton!
+    @IBOutlet weak var option2: UIButton!
+    @IBOutlet weak var option3: UIButton!
+    @IBOutlet weak var option4: UIButton!
+    @IBOutlet weak var option5: UIButton!
+    
     @IBOutlet weak var typeUserLabel: UILabel!
     @IBOutlet weak var nameLabelUser: UILabel!
     @IBOutlet weak var hiLabel: UILabel!
@@ -59,9 +65,20 @@ class ViewController3: UIViewController {
     func sendImageview(){
         if Global.sharedInstance.user.contains ("smu") {
             imageData.image = smu
+            option1.backgroundColor = UIColor.red
+            option2.backgroundColor = UIColor.red
+            option3.backgroundColor = UIColor.red
+            option4.backgroundColor = UIColor.red
+            option5.backgroundColor = UIColor.red
+
         }
         if Global.sharedInstance.user.contains ("banco") {
             imageData.image = bancoChile
+            option1.backgroundColor = UIColor.blue
+            option2.backgroundColor = UIColor.blue
+            option3.backgroundColor = UIColor.blue
+            option4.backgroundColor = UIColor.blue
+            option5.backgroundColor = UIColor.blue
         }
     }
     
