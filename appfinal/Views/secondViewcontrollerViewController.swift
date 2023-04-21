@@ -11,10 +11,12 @@ import FirebaseFirestore
 
 class secondViewcontrollerViewController: UIViewController {
     
+    @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     let db = Firestore.firestore()
+    var nameUser : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,8 @@ class secondViewcontrollerViewController: UIViewController {
     @IBAction func backHome(_ sender: Any) {
         backToHome()
     }
+    
+    
     
     func transformPassword(_ password: String) -> String {
         let charactersToReplace = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -47,7 +51,7 @@ class secondViewcontrollerViewController: UIViewController {
     }
     
     @IBAction func registerActionButton(_ sender: Any) {
-        if let email = emailTextField.text , let password = passwordTextField.text {
+        if let email = emailTextField.text , let password = passwordTextField.text ,let userName = userNameField.text{
             Auth.auth().createUser(withEmail: email, password: password) {
                 (result, error) in
                 if let result = result , error == nil {
@@ -55,9 +59,11 @@ class secondViewcontrollerViewController: UIViewController {
                     self.db.collection("users").document(email).setData([
                         "email": self.emailTextField.text!,
                         "password": transformedPassword,
-                        "isActive": true])
+                        "isActive": true,
+                        "userName": self.userNameField.text!])
                     Global.sharedInstance.user = email
                     Global.sharedInstance.userPassword = password
+                    Global.sharedInstance.userNameRegister = userName
                     let alertController = UIAlertController(title: "Usuario creado", message:
                                                                 "Tus datos han sido guardados exitosamente", preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { action in self.backToHome()}))
