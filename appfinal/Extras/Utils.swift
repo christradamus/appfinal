@@ -14,4 +14,5 @@ class Global {
     var userPassword: String = ""
     var name: String = ""
     var userNameRegister: String = ""
+    var userType: String = ""
 }

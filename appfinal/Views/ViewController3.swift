@@ -11,6 +11,7 @@ import FirebaseFirestore
 
 class ViewController3: UIViewController {
 
+    @IBOutlet weak var typeUserLabel: UILabel!
     @IBOutlet weak var nameLabelUser: UILabel!
     @IBOutlet weak var hiLabel: UILabel!
     @IBOutlet weak var titleUser: UILabel!
@@ -28,8 +29,11 @@ class ViewController3: UIViewController {
         let data = db.collection("users").document(Global.sharedInstance.user)
         data.getDocument { (document, error) in
             if let document = document, document.exists {
-                if let name = document.data()?["userName"] as? String { // Obtener el valor del campo "name"
-                    self.nameLabelUser.text = name // Asignar el valor a la propiedad text de la etiqueta
+                if let name = document.data()?["userName"] as? String {
+                    self.nameLabelUser.text = name
+                }
+                if let userType = document.data()?["userType"] as? String {
+                    self.typeUserLabel.text = userType
                 } else {
                     print("No se pudo obtener el nombre del usuario")
                 }
@@ -48,7 +52,6 @@ class ViewController3: UIViewController {
                 self.showWelcomeUser = remoteConfig.configValue(forKey: "welcome_string").stringValue!
                 self.hiLabel.text = showWelcomeUser
                 self.titleUser.text = showTitleUser
-                //self.nameUserLabel.text = Global.sharedInstance.userNameRegister
             }
         }
     }

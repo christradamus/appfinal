@@ -293,7 +293,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "022F5D4D-17CA-4CC4-B414-0F92C4342496"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appfinal/Views/ViewController.swift"
@@ -451,7 +451,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2EA90977-B524-4C64-B865-E1EB0FDB1257"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "appfinal/Views/ViewController.swift"
@@ -473,42 +473,10 @@
             filePath = "appfinal/Views/secondViewcontrollerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "registerActionButton(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8A4E0903-5AF2-4EE4-8167-B14346F85057 - 180c8f6ea5ca7fc0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.secondViewcontrollerViewController.registerActionButton(Any) -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/secondViewcontrollerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "376">
-               </Location>
-               <Location
-                  uuid = "8A4E0903-5AF2-4EE4-8167-B14346F85057 - 180c8f6ea5ca7fc0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.secondViewcontrollerViewController.registerActionButton(Any) -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/secondViewcontrollerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "572">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -521,42 +489,10 @@
             filePath = "appfinal/Views/secondViewcontrollerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "registerActionButton(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "36F8181D-0B34-49A6-959A-7FFEC64285FE - 180c8f6ea5ca7fa1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.secondViewcontrollerViewController.registerActionButton(Any) -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/secondViewcontrollerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "868">
-               </Location>
-               <Location
-                  uuid = "36F8181D-0B34-49A6-959A-7FFEC64285FE - 180c8f6ea5ca7fa1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.secondViewcontrollerViewController.registerActionButton(Any) -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/secondViewcontrollerViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "2240">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -617,16 +553,96 @@
             filePath = "appfinal/Views/ViewController3.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "sendImageview()"
-            landmarkType = "7">
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "ViewController3"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "83E498B3-F3E7-4539-BD36-D9D48D24A287"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appfinal/Views/ViewController3.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8B3494A-8929-44FC-85A1-5B27DBE42A42"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appfinal/Views/ViewController3.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8B3494A-8929-44FC-85A1-5B27DBE42A42 - 36b18fa292b243bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "appfinal.ViewController3.viewDidLoad() -&gt; ()"
+                  moduleName = "appfinal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController3.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "E8B3494A-8929-44FC-85A1-5B27DBE42A42 - 1bd8683f8100e909"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.ViewController3.viewDidLoad() -&gt; ()"
+                  moduleName = "appfinal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController3.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21379734-210F-4A4B-BAD6-AD2E66F2E7E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appfinal/Views/ViewController3.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B467F9D8-387F-4CA7-8161-02BB684E5037"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -642,7 +658,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E8B3494A-8929-44FC-85A1-5B27DBE42A42"
+            uuid = "37D88B82-E8AA-43F4-99D7-58C7AACDDC15"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -653,86 +669,86 @@
             endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E8B3494A-8929-44FC-85A1-5B27DBE42A42 - 36b18fa292b2439c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "appfinal.ViewController3.viewDidLoad() -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "472">
-               </Location>
-               <Location
-                  uuid = "E8B3494A-8929-44FC-85A1-5B27DBE42A42 - 1bd8683f8100e968"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in appfinal.ViewController3.viewDidLoad() -&gt; ()"
-                  moduleName = "appfinal"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caperezf/Documents/appfinal/appfinal/Views/ViewController3.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "21379734-210F-4A4B-BAD6-AD2E66F2E7E1"
+            uuid = "7FCD9E28-1F5B-4556-B1F5-5ED2DF2803E1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "appfinal/Views/ViewController3.swift"
+            filePath = "appfinal/Views/secondViewcontrollerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "registerActionButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B467F9D8-387F-4CA7-8161-02BB684E5037"
+            uuid = "355A6F2A-C416-4E43-93F1-FDD6F00963CB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "appfinal/Views/ViewController3.swift"
+            filePath = "appfinal/Views/secondViewcontrollerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "registerActionButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "37D88B82-E8AA-43F4-99D7-58C7AACDDC15"
+            uuid = "1840393F-0A87-4DBC-877C-C710648F3FDC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "appfinal/Views/ViewController3.swift"
+            filePath = "appfinal/Views/secondViewcontrollerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "registerActionButton(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D235991F-C0EF-4172-B362-D93D49C699B1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appfinal/Views/secondViewcontrollerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "registerActionButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E07B055-578C-4ADD-8481-D1BC2E830A54"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appfinal/Views/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
