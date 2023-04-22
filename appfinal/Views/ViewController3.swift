@@ -70,7 +70,6 @@ class ViewController3: UIViewController {
             option3.backgroundColor = UIColor.red
             option4.backgroundColor = UIColor.red
             option5.backgroundColor = UIColor.red
-
         }
         if Global.sharedInstance.user.contains ("banco") {
             imageData.image = bancoChile
