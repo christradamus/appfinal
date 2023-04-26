@@ -109,6 +109,9 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let nombre = stringsArray[indexPath.row]
+        let attributedText = NSMutableAttributedString(string: nombre)
+        attributedText.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 16), range: NSRange(location: 0, length: nombre.count))
+        cell.textLabel?.attributedText = attributedText
         cell.textLabel?.text = nombre
         cell.textLabel?.textColor = UIColor.black
         cell.backgroundColor = UIColor.systemYellow
