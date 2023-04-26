@@ -33,7 +33,7 @@ class secondViewcontrollerViewController: UIViewController, UIPickerViewDelegate
     @IBOutlet weak var registerButton: UIButton!
     let db = Firestore.firestore()
     var nameUser : String = ""
-    let options = ["Administrador", "Colaborador"]
+    let options = ["Administrador", "Usuario"]
     
     @objc func doneButtonTapped() {
         typeUserText.resignFirstResponder()

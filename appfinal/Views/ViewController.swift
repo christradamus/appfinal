@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     }
     
     func goToTheMainHome(){
-        let home = self.storyboard?.instantiateViewController(withIdentifier: "capa3") as! ViewController3
+        let home = self.storyboard?.instantiateViewController(withIdentifier: "collection") as! CollectionViewController
         self.navigationController?.pushViewController(home, animated: true)
     }
     
