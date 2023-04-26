@@ -518,6 +518,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="aaC-IO-PNw" id="2nX-5f-a4u"/>
+                        <outlet property="titleLbl" destination="tnu-MR-A4j" id="MfB-0K-qhM"/>
                         <outlet property="userNameLabel" destination="EUP-PU-1a3" id="yVJ-x8-DVR"/>
                         <outlet property="userTypeLabel" destination="nc8-4z-auO" id="gkA-M3-dkz"/>
                     </connections>

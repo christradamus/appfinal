@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 class CollectionViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
+    @IBOutlet weak var titleLbl: UILabel!
     let db = Firestore.firestore()
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -19,9 +20,21 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
     var tableViewData = [[String: Any]]()
     var stringsArray = [String]()
     var checkUserType: String = ""
+    private var showTitle: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 5
+        let remoteConfig = RemoteConfig.remoteConfig()
+        remoteConfig.configSettings = settings
+        remoteConfig.setDefaults(["generic_name": NSString("Tu Empresa")])
+        remoteConfig.fetchAndActivate { [self] (status,error) in
+            if status != .error {
+                self.showTitle = remoteConfig.configValue(forKey: "generic_name").stringValue!
+                self.titleLbl.text = showTitle
+            }
+        }
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.center = self.view.center
         activityIndicator.frame.origin.y -= 90
