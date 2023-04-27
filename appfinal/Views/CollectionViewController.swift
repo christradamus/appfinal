@@ -35,11 +35,6 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
                 self.titleLbl.text = showTitle
             }
         }
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.center = self.view.center
-        activityIndicator.frame.origin.y -= 90
-        activityIndicator.startAnimating()
-        self.view.addSubview(activityIndicator)
         let data = db.collection("users").document(Global.sharedInstance.user)
         data.getDocument { (document, error) in
             if let document = document, document.exists {
@@ -89,15 +84,9 @@ class CollectionViewController: UIViewController, UITableViewDelegate,UITableVie
                         }
                     }
                 }
-                DispatchQueue.global(qos: .userInitiated).async {
-                    self.tableView.delegate = self
-                    self.tableView.dataSource = self
-                    self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-                    DispatchQueue.main.async {
-                        activityIndicator.stopAnimating()
-                        activityIndicator.removeFromSuperview()
-                    }
-                }
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
             }
         }
     }
