@@ -46,6 +46,24 @@ class ViewController: UIViewController {
         }
     }
     
+    //FUNCION PARA GUARDAR TXT
+    /*func exportLogs() {
+        // Crea una variable que almacene los registros de actividad de tu aplicación
+        let logs = "Registro de actividad de mi aplicación"
+        
+        // Crea una URL para la ubicación donde se guardará el archivo de texto
+        let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("logs.txt")
+        
+        do {
+            // Escribe los registros de actividad en el archivo de texto
+            try logs.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch {
+            // Maneja cualquier error que ocurra al guardar el archivo de texto
+            print("Error al guardar el archivo de texto: \(error.localizedDescription)")
+        }
+    }*/
+    
+    
     @IBAction func buttonHome(_ sender: Any) {
         Auth.auth().signIn(withEmail: userLogin.text!, password: userPassword.text!) { [self] authResult, error in
             if userLogin.text! == "" || userPassword.text! == "" {
@@ -93,6 +111,9 @@ class ViewController: UIViewController {
                         else {
                             Global.sharedInstance.arrayFinal = self.arrayUser
                         }
+                        //FUNCION PARA GUARDAR LOG Y VER UBICACION DEL TXT LOG
+                        //self.exportLogs()
+                       // let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("logs.txt")
                         self.goToTheMainHome()
                     }
                 }
