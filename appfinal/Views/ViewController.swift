@@ -17,10 +17,13 @@ class ViewController: UIViewController {
     private var failedAttempts = 0
     private var showTitle: String = ""
     private var showWelcome: String = ""
+    var arrayUser = [String]()
+    var arrayAdmin = [String]()
     let ERROR_USER_DISABLED_MESSAGE = "Su cuenta está bloqueada, contacte a un administrador"
     let ERROR_WRONG_PASSWORD_MESSAGE = "Usuario y/o Clave No válidos"
     let ERROR_TOO_MANY_REQUESTS_MESSAGE = "Su cuenta está bloqueada, contacte a un administrador"
     let ERROR_INVALID_EMAIL_MESSAGE = "Usuario y/o Clave No válidos"
+    var arrayButtons = [String]()
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var userLogin: UITextField!
@@ -65,7 +68,7 @@ class ViewController: UIViewController {
                     if failedAttempts >= 3 {
                         errorMessage = self.ERROR_USER_DISABLED_MESSAGE
                         databaseInformation.updateData(["isActive": false
-                        ])
+                                                       ])
                     }
                 case "ERROR_TOO_MANY_REQUESTS":
                     errorMessage = self.ERROR_TOO_MANY_REQUESTS_MESSAGE
@@ -78,11 +81,25 @@ class ViewController: UIViewController {
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
             } else {
-                self.goToTheMainHome()
+                let data = db.collection("users").document(Global.sharedInstance.user)
+                data.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        if let userType = document.data()?["userType"] as? String {
+                            Global.sharedInstance.userType = userType
+                        }
+                        if Global.sharedInstance.userType == "Administrador" {
+                            Global.sharedInstance.arrayFinal = self.arrayAdmin
+                        }
+                        else {
+                            Global.sharedInstance.arrayFinal = self.arrayUser
+                        }
+                        self.goToTheMainHome()
+                    }
+                }
             }
         }
     }
-    
+
     @IBAction func createAccount(_ sender: Any) {
         let homeVc =
         self.storyboard?.instantiateViewController(withIdentifier: "segundointerfaz")

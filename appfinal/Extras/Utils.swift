@@ -16,4 +16,5 @@ class Global {
     var userNameRegister: String = ""
     var userType: String = ""
     var globalArray = [String]()
+    var arrayFinal = [String]()
 }

@@ -21,13 +21,22 @@ class CollectionViewController: UIViewController {
     @IBOutlet weak var userTypeLabel: UILabel!
     var checkUserType: String = ""
     private var showTitle: String = ""
+    private var boton1User: String = ""
+    private var boton2User: String = ""
+    private var boton3User: String = ""
+    private var boton4User: String = ""
+    private var boton5User: String = ""
+    private var boton1Admin: String = ""
+    private var boton2Admin: String = ""
+    private var boton3Admin: String = ""
+    private var boton4Admin: String = ""
+    private var boton5Admin: String = ""
     var arrayDataUser = [String]()
+    var arrayUser = [String]()
+    var arrayAdmin = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Global.sharedInstance.globalArray = arrayDataUser
-        tableView.delegate = self
-        tableView.dataSource = self
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 5
         let remoteConfig = RemoteConfig.remoteConfig()
@@ -36,7 +45,21 @@ class CollectionViewController: UIViewController {
         remoteConfig.fetchAndActivate { [self] (status,error) in
             if status != .error {
                 self.showTitle = remoteConfig.configValue(forKey: "generic_name").stringValue!
+                self.boton1Admin = remoteConfig.configValue(forKey: "boton1Admin").stringValue!
+                self.boton2Admin = remoteConfig.configValue(forKey: "boton2Admin").stringValue!
+                self.boton3Admin = remoteConfig.configValue(forKey: "boton3Admin").stringValue!
+                self.boton4Admin = remoteConfig.configValue(forKey: "boton4Admin").stringValue!
+                self.boton5Admin = remoteConfig.configValue(forKey: "boton5Admin").stringValue!
+                self.boton1User = remoteConfig.configValue(forKey: "boton1User").stringValue!
+                self.boton2User = remoteConfig.configValue(forKey: "boton2User").stringValue!
+                self.boton3User = remoteConfig.configValue(forKey: "boton3User").stringValue!
+                self.boton4User = remoteConfig.configValue(forKey: "boton4User").stringValue!
+                self.boton5User = remoteConfig.configValue(forKey: "boton5User").stringValue!
+                self.arrayUser = [boton1User,boton2User,boton3User,boton4User,boton5User]
+                self.arrayAdmin = [boton1Admin,boton2Admin,boton3Admin,boton4Admin,boton5Admin]
                 self.titleLbl.text = showTitle
+                tableView.delegate = self
+                tableView.dataSource = self
             }
         }
         let data = db.collection("users").document(Global.sharedInstance.user)
@@ -67,12 +90,21 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = adminArray[indexPath.row]
+        if Global.sharedInstance.userType == "Administrador" {
+            print(arrayAdmin)
+            cell.textLabel?.text = arrayAdmin[indexPath.row]
+        } else {
+            cell.textLabel?.text = arrayUser[indexPath.row]
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("hola")
+        if Global.sharedInstance.userType == "Administrador" {
+            print("ajjaja admin")
+        } else {
+            print("ajjaja user")
+        }
     }
 }
 
