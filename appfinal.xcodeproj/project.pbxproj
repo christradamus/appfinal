@@ -19,6 +19,7 @@
 		4BAE9D7A29DA23B900F2D4D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BAE9D7929DA23B900F2D4D8 /* GoogleService-Info.plist */; };
 		4BB5A78729E62F07009244C2 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB5A78629E62F07009244C2 /* PasswordViewController.swift */; };
 		4BE59D3829FCA24E00EB1F74 /* AddNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE59D3729FCA24E00EB1F74 /* AddNewUserViewController.swift */; };
+		4BE59D3A29FCAAE500EB1F74 /* BankAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE59D3929FCAAE500EB1F74 /* BankAccountViewController.swift */; };
 		4BEBF83B29F35B020004FAD7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBF83A29F35B020004FAD7 /* CollectionViewController.swift */; };
 		84CBD9A9234F34FB156FC8E7 /* Pods_appfinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354505523D56A111C901FAD7 /* Pods_appfinal.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		4BAE9D7929DA23B900F2D4D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BB5A78629E62F07009244C2 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		4BE59D3729FCA24E00EB1F74 /* AddNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewUserViewController.swift; sourceTree = "<group>"; };
+		4BE59D3929FCAAE500EB1F74 /* BankAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountViewController.swift; sourceTree = "<group>"; };
 		4BEBF83A29F35B020004FAD7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		CA6B0019CE161AF703EACA8C /* Pods-appfinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appfinal.debug.xcconfig"; path = "Target Support Files/Pods-appfinal/Pods-appfinal.debug.xcconfig"; sourceTree = "<group>"; };
 		FEFAD60BF752525D117FFFFD /* Pods-appfinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appfinal.release.xcconfig"; path = "Target Support Files/Pods-appfinal/Pods-appfinal.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				4BB5A78629E62F07009244C2 /* PasswordViewController.swift */,
 				4BEBF83A29F35B020004FAD7 /* CollectionViewController.swift */,
 				4BE59D3729FCA24E00EB1F74 /* AddNewUserViewController.swift */,
+				4BE59D3929FCAAE500EB1F74 /* BankAccountViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				42FD19BB287381A2001B0ECF /* ViewController.swift in Sources */,
 				42C1811E2873C4B600E3207B /* secondViewcontrollerViewController.swift in Sources */,
 				4BEBF83B29F35B020004FAD7 /* CollectionViewController.swift in Sources */,
+				4BE59D3A29FCAAE500EB1F74 /* BankAccountViewController.swift in Sources */,
 				4BB5A78729E62F07009244C2 /* PasswordViewController.swift in Sources */,
 				42FD19B7287381A2001B0ECF /* AppDelegate.swift in Sources */,
 				42FD19B9287381A2001B0ECF /* SceneDelegate.swift in Sources */,

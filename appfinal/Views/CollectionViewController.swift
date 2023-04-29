@@ -101,9 +101,15 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if Global.sharedInstance.userType == "Administrador" {
-            print("ajjaja admin")
+            let homeVc =
+            self.storyboard?.instantiateViewController(withIdentifier: "addnewuser")
+            as! AddNewUserViewController
+            self.navigationController?.pushViewController(homeVc, animated: true)
         } else {
-            print("ajjaja user")
+            let homeVc =
+            self.storyboard?.instantiateViewController(withIdentifier: "bank")
+            as! BankAccountViewController
+            self.navigationController?.pushViewController(homeVc, animated: true)
         }
     }
 }
