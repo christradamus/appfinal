@@ -67,6 +67,7 @@ class CollectionViewController: UIViewController {
             if let document = document, document.exists {
                 if let name = document.data()?["userName"] as? String {
                     self.userNameLabel.text = name
+                    Global.sharedInstance.name = name
                 }
                 if let userType = document.data()?["userType"] as? String {
                     self.userTypeLabel.text = userType
@@ -100,6 +101,7 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if Global.sharedInstance.userType == "Administrador" {
             let homeVc =
             self.storyboard?.instantiateViewController(withIdentifier: "addnewuser")
