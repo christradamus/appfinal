@@ -630,13 +630,16 @@
                                                 <buttonConfiguration key="configuration" style="gray" title="Registrar">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="newUser:" destination="91g-eN-LrS" eventType="touchUpInside" id="iR4-op-XFK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOE-cc-jmi">
                                                 <rect key="frame" x="195" y="0.0" width="187" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="Volver al inicio">
+                                                <buttonConfiguration key="configuration" style="gray" title="Volver al menú">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -662,6 +665,13 @@
                             <constraint firstItem="yKq-x7-WbV" firstAttribute="trailing" secondItem="qOi-wj-suv" secondAttribute="trailing" constant="16" id="nwp-uY-JmO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cuenta" destination="ZJl-m6-r2w" id="nLm-Ri-kdL"/>
+                        <outlet property="mail" destination="jJk-eW-c4i" id="5Tk-fq-o79"/>
+                        <outlet property="nac" destination="26d-sN-TYm" id="ajZ-jd-uSB"/>
+                        <outlet property="name" destination="jJk-eW-c4i" id="CvI-FR-iat"/>
+                        <outlet property="rut" destination="prL-TL-a2G" id="8Ev-yS-qVk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84b-rF-7tZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
