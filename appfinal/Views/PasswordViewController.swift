@@ -20,12 +20,14 @@ class PasswordViewController: UIViewController {
                                                             "Hemos enviado un mail con instrucciones para recuperar tu contraseña", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { action in self.backToHome()}))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Recuperación de clave Ok", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Recuperar Contraseña")
             } else {
                 let alertController = UIAlertController(title: "Error", message:
                                                             "Correo no Válido, Vuelva a ingresar su mail",
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Error con recuperación de clave", fecha: Global.sharedInstance.getDate(), tipoLog: "Error", modulo: "Recuperar Contraseña")
             }
         }
     }
@@ -33,6 +35,7 @@ class PasswordViewController: UIViewController {
     @IBAction func backToTheHome(_ sender: Any) {
         let home = self.storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
         self.navigationController?.pushViewController(home, animated: true)
+        Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Volver al inicio", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Recuperar Contraseña")
     }
     
     func backToHome(){

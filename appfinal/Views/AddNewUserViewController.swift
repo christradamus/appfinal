@@ -20,6 +20,7 @@ class AddNewUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Ingreso ok al menú de agregar nuevo usuario", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Agregar nuevo usuario")
     }
     
     func validarString(_ string: String) -> Bool {
@@ -42,38 +43,10 @@ class AddNewUserViewController: UIViewController {
         return false
     }
     
-    func validarRUT(_ rut: String) -> Bool {
-        var rutSinDV = rut
-        var digitoVerificador = ""
-        if let indiceDV = rut.index(of: "-") {
-            rutSinDV = String(rut[..<indiceDV])
-            digitoVerificador = String(rut[indiceDV...])
-        } else {
-            return false
-        }
-        rutSinDV = rutSinDV.replacingOccurrences(of: ".", with: "")
-        guard let numero = Int(rutSinDV) else {
-            return false
-        }
-        var multiplicador = 2
-        var suma = 0
-        for digito in rutSinDV.reversed() {
-            let valor = Int(String(digito)) ?? 0
-            suma += valor * multiplicador
-            multiplicador += 1
-            if multiplicador > 7 {
-                multiplicador = 2
-            }
-        }
-        let resto = suma % 11
-        let resultado = 11 - resto
-        if resultado == 10 {
-            return digitoVerificador.uppercased() == "K"
-        } else if resultado == 11 {
-            return digitoVerificador == "0"
-        } else {
-            return digitoVerificador == String(resultado)
-        }
+    func validarRut(_ rut: String) -> Bool {
+        let rutRegex = #"^\d{1,2}\.\d{3}\.\d{3}-[\dKk]{1}$"#
+        let rutPredicate = NSPredicate(format: "SELF MATCHES %@", rutRegex)
+        return rutPredicate.evaluate(with: rut)
     }
     
     func validarCorreoElectronico(_ correo: String) -> Bool {
@@ -92,6 +65,7 @@ class AddNewUserViewController: UIViewController {
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Error con registro", fecha: Global.sharedInstance.getDate(), tipoLog: "Error", modulo: "Agregar nuevo usuario")
                 return
             }
             if validarString(name) {
@@ -100,6 +74,7 @@ class AddNewUserViewController: UIViewController {
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Error con registro", fecha: Global.sharedInstance.getDate(), tipoLog: "Error", modulo: "Agregar nuevo usuario")
                 return
             }
             if !validarFechaNacimiento(nac) {
@@ -108,14 +83,16 @@ class AddNewUserViewController: UIViewController {
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Error con registro", fecha: Global.sharedInstance.getDate(), tipoLog: "Error", modulo: "Agregar nuevo usuario")
                 return
             }
-            if validarRUT(rut) {
+            if !validarRut(rut) {
                 let alertController = UIAlertController(title: "Error", message:
-                                                            "Ingrese su RUT sin puntos y Guión",
+                                                            "Ingrese su RUT con puntos y Guión",
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Error con registro", fecha: Global.sharedInstance.getDate(), tipoLog: "Error", modulo: "Agregar nuevo usuario")
                 return
             }
             if !validarCorreoElectronico(email) {
@@ -124,6 +101,7 @@ class AddNewUserViewController: UIViewController {
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Error con registro", fecha: Global.sharedInstance.getDate(), tipoLog: "Error", modulo: "Agregar nuevo usuario")
                 return
             }
             self.db.collection("clientes").document(rut).setData([
@@ -136,12 +114,14 @@ class AddNewUserViewController: UIViewController {
                                                         "Los datos han sido guardados exitosamente", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { action in self.backToMenu()}))
             self.present(alertController, animated: true, completion: nil)
+            Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Registro ok de nuevo usuario", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Agregar nuevo usuario")
         }
     }
     
     @IBAction func backHomeBtn(_ sender: Any) {
         let home = self.storyboard?.instantiateViewController(withIdentifier: "collection") as! CollectionViewController
         self.navigationController?.pushViewController(home, animated: true)
+        Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Volver al menú principal", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Agregar nuevo usuario")
     }
     
     func backToMenu(){

@@ -9,6 +9,8 @@ import UIKit
 import FirebaseAuth
 import FirebaseRemoteConfig
 import FirebaseFirestore
+import FirebaseCore
+import FirebaseAnalytics
 
 class ViewController: UIViewController {
     
@@ -17,6 +19,7 @@ class ViewController: UIViewController {
     private var failedAttempts = 0
     private var showTitle: String = ""
     private var showWelcome: String = ""
+    private var fechaOk: String = ""
     var arrayUser = [String]()
     var arrayAdmin = [String]()
     let ERROR_USER_DISABLED_MESSAGE = "Su cuenta está bloqueada, contacte a un administrador"
@@ -44,24 +47,8 @@ class ViewController: UIViewController {
                 self.titleLabel.text = showTitle
             }
         }
+        Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Inicio app", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Pantalla inicio")
     }
-    
-    //FUNCION PARA GUARDAR TXT
-    /*func exportLogs() {
-        // Crea una variable que almacene los registros de actividad de tu aplicación
-        let logs = "Registro de actividad de mi aplicación"
-        
-        // Crea una URL para la ubicación donde se guardará el archivo de texto
-        let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("logs.txt")
-        
-        do {
-            // Escribe los registros de actividad en el archivo de texto
-            try logs.write(to: fileURL, atomically: true, encoding: .utf8)
-        } catch {
-            // Maneja cualquier error que ocurra al guardar el archivo de texto
-            print("Error al guardar el archivo de texto: \(error.localizedDescription)")
-        }
-    }*/
     
     
     @IBAction func buttonHome(_ sender: Any) {
@@ -70,6 +57,7 @@ class ViewController: UIViewController {
                 let alertController = UIAlertController(title: "Error", message: "Favor ingresar email y clave", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Error login", fecha: Global.sharedInstance.getDate(), tipoLog: "Error", modulo: "Pantalla inicio")
                 return
             }
             let databaseInformation = db.collection("users").document(self.userLogin.text!)
@@ -98,6 +86,7 @@ class ViewController: UIViewController {
                 let alertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: errorMessage, fecha: Global.sharedInstance.getDate(), tipoLog: "Error", modulo: "Pantalla inicio")
             } else {
                 let data = db.collection("users").document(Global.sharedInstance.user)
                 data.getDocument { (document, error) in
@@ -111,9 +100,7 @@ class ViewController: UIViewController {
                         else {
                             Global.sharedInstance.arrayFinal = self.arrayUser
                         }
-                        //FUNCION PARA GUARDAR LOG Y VER UBICACION DEL TXT LOG
-                        //self.exportLogs()
-                       // let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("logs.txt")
+                        Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Login Ok", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Pantalla inicio")
                         self.goToTheMainHome()
                     }
                 }
@@ -126,6 +113,7 @@ class ViewController: UIViewController {
         self.storyboard?.instantiateViewController(withIdentifier: "segundointerfaz")
         as! secondViewcontrollerViewController
         self.navigationController?.pushViewController(homeVc, animated: true)
+        Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Ir a crear cuenta", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Crear cuenta")
     }
     
     func goToTheMainHome(){
@@ -136,5 +124,6 @@ class ViewController: UIViewController {
     @IBAction func goToPasswordVC(_ sender: Any) {
         let home = self.storyboard?.instantiateViewController(withIdentifier: "password") as! PasswordViewController
         self.navigationController?.pushViewController(home, animated: true)
+        Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Ir a recuperar clave", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Reseteo password")
     }
 }

@@ -36,6 +36,7 @@ class CollectionViewController: UIViewController {
     var arrayAdmin = [String]()
     
     override func viewDidLoad() {
+        Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Ingreso Ok al menú", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Menú principal")
         super.viewDidLoad()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = 5
@@ -81,6 +82,7 @@ class CollectionViewController: UIViewController {
     @IBAction func backHomeButton(_ sender: Any) {
         let home = self.storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
         self.navigationController?.pushViewController(home, animated: true)
+        Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Volver al inicio", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Menú principal")
     }
 }
 
@@ -107,11 +109,13 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
             self.storyboard?.instantiateViewController(withIdentifier: "addnewuser")
             as! AddNewUserViewController
             self.navigationController?.pushViewController(homeVc, animated: true)
+            Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Agregar nuevo usuario", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Menú principal")
         } else {
             let homeVc =
             self.storyboard?.instantiateViewController(withIdentifier: "bank")
             as! BankAccountViewController
             self.navigationController?.pushViewController(homeVc, animated: true)
+            Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Ver cuenta bancaria", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Menú principal")
         }
     }
 }

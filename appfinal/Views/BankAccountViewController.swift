@@ -20,6 +20,7 @@ class BankAccountViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Ingreso ok a datos bancarios", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Cuenta bancaria")
         numberFormatter.locale = Locale(identifier: "es_CL")
         numberFormatter.numberStyle = .currency
         numberFormatter.currencyCode = "CLP"
@@ -42,11 +43,13 @@ class BankAccountViewController: UIViewController{
     @IBAction func bankButton(_ sender: Any) {
         let home = self.storyboard?.instantiateViewController(withIdentifier: "collection") as! CollectionViewController
         self.navigationController?.pushViewController(home, animated: true)
+        Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Volver al menú principal", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Cuenta bancaria")
     }
     
     @IBAction func goToTheWebButton(_ sender: Any) {
         if let url = URL(string: "https://login.portal.bancochile.cl/bancochile-web/persona/login/index.html#/login") {
             UIApplication.shared.open(url)
+            Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user, mensaje: "Ir al portal web", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Cuenta bancaria")
         }
     }
     

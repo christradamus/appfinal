@@ -55,6 +55,7 @@ class secondViewcontrollerViewController: UIViewController, UIPickerViewDelegate
     func backToHome(){
         let home = self.storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
         self.navigationController?.pushViewController(home, animated: true)
+        Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Volver al inicio", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Crear cuenta")
     }
     
     @IBAction func backHome(_ sender: Any) {
@@ -96,6 +97,7 @@ class secondViewcontrollerViewController: UIViewController, UIPickerViewDelegate
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Problemas con registro", fecha: Global.sharedInstance.getDate(), tipoLog: "Warning", modulo: "Crear cuenta")
                 return
             }
             if !validarString(userName) {
@@ -104,6 +106,7 @@ class secondViewcontrollerViewController: UIViewController, UIPickerViewDelegate
                                                         preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                 self.present(alertController, animated: true, completion: nil)
+                Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Problemas con registro", fecha: Global.sharedInstance.getDate(), tipoLog: "Warning", modulo: "Crear cuenta")
                 return
             }
             Auth.auth().createUser(withEmail: email, password: password) {
@@ -124,12 +127,14 @@ class secondViewcontrollerViewController: UIViewController, UIPickerViewDelegate
                                                                 "Tus datos han sido guardados exitosamente", preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: { action in self.backToHome()}))
                     self.present(alertController, animated: true, completion: nil)
+                    Global.sharedInstance.agregarInteraccion(usuario: Global.sharedInstance.user , mensaje: "Registro Ok", fecha: Global.sharedInstance.getDate(), tipoLog: "Info", modulo: "Crear cuenta")
                 } else {
                     let alertController = UIAlertController(title: "Error", message:
                                                                 "Se ha producido un error con el registro",
                                                             preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "Volver", style: .default))
                     self.present(alertController, animated: true, completion: nil)
+                    Global.sharedInstance.agregarInteraccion(usuario: "No ingresado", mensaje: "Problemas con registro", fecha: Global.sharedInstance.getDate(), tipoLog: "Warning", modulo: "Crear cuenta")
                 }
             }
         }
